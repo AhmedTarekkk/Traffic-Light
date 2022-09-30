@@ -5,13 +5,22 @@
 unsigned char led = 1;
 extern signed char time;
 
+void TIMER1_ISR()
+{
+	time--;
+}
+
 int main(void)
 {
 	SevenSegment_INIT();
+
 	TIMER1_INIT();
+	TIMER1_SetCallBack(TIMER1_ISR);
+
 	Led_Init();
-	Led_Green();
+
 	sei();
+
 	while(1)
 	{
 		if(time >= 0)

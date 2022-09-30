@@ -5,7 +5,7 @@
  *      Author: Ahmed
  */
 #include "Led.h"
-signed char time = 9 ;
+signed char time = 0 ;
 
 void Led_Init(void)
 {
@@ -16,6 +16,8 @@ void Led_Init(void)
 	GPIO_writePin(PORTD_ID, 0, LOGIC_LOW);
 	GPIO_writePin(PORTD_ID, 1, LOGIC_LOW);
 	GPIO_writePin(PORTD_ID, 2, LOGIC_LOW);
+
+	Led_Green();
 }
 void Led_Green(void)
 {

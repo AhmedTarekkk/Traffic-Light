@@ -8,6 +8,8 @@
 #include "TIMER.h"
 #include "avr/io.h"
 
+static void(*CallBackPtr)(void);
+
 void TIMER1_INIT(void)
 {
 	SET_BIT(TCCR1A,FOC1B);
@@ -22,7 +24,16 @@ void TIMER1_INIT(void)
 	SET_BIT(TIMSK,OCIE1B);
 }
 
-ISR(TIMER1_COMPB_vect) // Interrupt service routine to control the watch time
-{
-	time--;
+void __vector_8(void) __attribute__((signal,used));
+
+void __vector_8(void){
+
+	CallBackPtr();
+
 }
+
+void TIMER1_SetCallBack(void (*Ptr)(void))
+{
+	CallBackPtr = Ptr ;
+}
+
