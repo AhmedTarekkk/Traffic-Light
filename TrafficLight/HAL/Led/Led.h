@@ -8,7 +8,7 @@
 #ifndef LED_H_
 #define LED_H_
 
-#include "../../LIB/gpio.h"
+#include "../../MCAL/GPIO/gpio.h"
 #include "avr/io.h"
 
 

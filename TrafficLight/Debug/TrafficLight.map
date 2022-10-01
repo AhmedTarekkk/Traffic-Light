@@ -22,7 +22,7 @@ Linker script and memory map
 
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
 LOAD ./MCAL/TIMER1/TIMER.o
-LOAD ./LIB/gpio.o
+LOAD ./MCAL/GPIO/gpio.o
 LOAD ./HAL/SevenSegment/SevenSegment.o
 LOAD ./HAL/Led/Led.o
 LOAD ./main.o
@@ -197,7 +197,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x0000008e                __vector_18
                 0x0000008e                __vector_20
  .text          0x00000092        0x0 ./MCAL/TIMER1/TIMER.o
- .text          0x00000092        0x0 ./LIB/gpio.o
+ .text          0x00000092        0x0 ./MCAL/GPIO/gpio.o
  .text          0x00000092        0x0 ./HAL/SevenSegment/SevenSegment.o
  .text          0x00000092        0x0 ./HAL/Led/Led.o
  .text          0x00000092        0x0 ./main.o
@@ -216,22 +216,22 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00000162       0x24 ./MCAL/TIMER1/TIMER.o
                 0x00000162                TIMER1_SetCallBack
  .text.GPIO_setupPinDirection
-                0x00000186      0x1d6 ./LIB/gpio.o
+                0x00000186      0x1d6 ./MCAL/GPIO/gpio.o
                 0x00000186                GPIO_setupPinDirection
  .text.GPIO_writePin
-                0x0000035c      0x1d6 ./LIB/gpio.o
+                0x0000035c      0x1d6 ./MCAL/GPIO/gpio.o
                 0x0000035c                GPIO_writePin
  .text.GPIO_readPin
-                0x00000532      0x136 ./LIB/gpio.o
+                0x00000532      0x136 ./MCAL/GPIO/gpio.o
                 0x00000532                GPIO_readPin
  .text.GPIO_setupPortDirection
-                0x00000668       0x88 ./LIB/gpio.o
+                0x00000668       0x88 ./MCAL/GPIO/gpio.o
                 0x00000668                GPIO_setupPortDirection
  .text.GPIO_writePort
-                0x000006f0       0x88 ./LIB/gpio.o
+                0x000006f0       0x88 ./MCAL/GPIO/gpio.o
                 0x000006f0                GPIO_writePort
  .text.GPIO_readPort
-                0x00000778       0x8a ./LIB/gpio.o
+                0x00000778       0x8a ./MCAL/GPIO/gpio.o
                 0x00000778                GPIO_readPort
  .text.SevenSegment_INIT
                 0x00000802       0x4a ./HAL/SevenSegment/SevenSegment.o
@@ -290,7 +290,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  .data          0x00800060        0x0 ./MCAL/TIMER1/TIMER.o
- .data          0x00800060        0x0 ./LIB/gpio.o
+ .data          0x00800060        0x0 ./MCAL/GPIO/gpio.o
  .data          0x00800060        0x0 ./HAL/SevenSegment/SevenSegment.o
  .data          0x00800060        0x0 ./HAL/Led/Led.o
  .data          0x00800060        0x0 ./main.o
@@ -313,7 +313,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.bss)
  .bss           0x00800062        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  .bss           0x00800062        0x0 ./MCAL/TIMER1/TIMER.o
- .bss           0x00800062        0x0 ./LIB/gpio.o
+ .bss           0x00800062        0x0 ./MCAL/GPIO/gpio.o
  .bss           0x00800062        0x0 ./HAL/SevenSegment/SevenSegment.o
  .bss           0x00800062        0x0 ./HAL/Led/Led.o
  .bss           0x00800062        0x0 ./main.o
@@ -356,7 +356,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .stab           0x00000000     0x132c
  *(.stab)
  .stab          0x00000000      0x3fc ./MCAL/TIMER1/TIMER.o
- .stab          0x000003fc      0x6b4 ./LIB/gpio.o
+ .stab          0x000003fc      0x6b4 ./MCAL/GPIO/gpio.o
                                 0x870 (size before relaxing)
  .stab          0x00000ab0      0x2b8 ./HAL/SevenSegment/SevenSegment.o
                                 0x474 (size before relaxing)
@@ -365,9 +365,9 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .stab          0x000010f8      0x234 ./main.o
                                 0x4c8 (size before relaxing)
 
-.stabstr        0x00000000      0xd24
+.stabstr        0x00000000      0xd6c
  *(.stabstr)
- .stabstr       0x00000000      0xd24 ./MCAL/TIMER1/TIMER.o
+ .stabstr       0x00000000      0xd6c ./MCAL/TIMER1/TIMER.o
 
 .stab.excl
  *(.stab.excl)

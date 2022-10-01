@@ -21,7 +21,7 @@ C_DEPS :=
 SUBDIRS := \
 HAL/Led \
 HAL/SevenSegment \
-LIB \
+MCAL/GPIO \
 MCAL/TIMER1 \
 . \
 

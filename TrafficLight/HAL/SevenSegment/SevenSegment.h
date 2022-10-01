@@ -8,7 +8,7 @@
 #ifndef SEVENSEGMENT_H_
 #define SEVENSEGMENT_H_
 
-#include "../../LIB/gpio.h"
+#include "../../MCAL/GPIO/gpio.h"
 #include "avr/io.h"
 
 void SevenSegment_INIT(void);

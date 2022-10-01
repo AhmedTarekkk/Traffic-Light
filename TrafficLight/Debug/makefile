@@ -9,7 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include MCAL/TIMER1/subdir.mk
--include LIB/subdir.mk
+-include MCAL/GPIO/subdir.mk
 -include HAL/SevenSegment/subdir.mk
 -include HAL/Led/subdir.mk
 -include subdir.mk
