@@ -1,6 +1,7 @@
 #include "HAL/Led/Led.h"
 #include "MCAL/TIMER1/TIMER.h"
 #include "HAL/SevenSegment/SevenSegment.h"
+#include "HAL/LCD/lcd.h"
 
 unsigned char led = 1;
 extern signed char time;
@@ -13,6 +14,7 @@ void TIMER1_ISR()
 int main(void)
 {
 	SevenSegment_INIT();
+	LCD_init();
 
 	TIMER1_INIT();
 	TIMER1_SetCallBack(TIMER1_ISR);
@@ -20,6 +22,8 @@ int main(void)
 	Led_Init();
 
 	sei();
+
+	LCD_displayStringRowColumn(1, 2, "Secs Remaining");
 
 	while(1)
 	{
@@ -41,5 +45,8 @@ int main(void)
 				led = 0;
 			}
 		}
+		LCD_moveCursor(0, 8);
+		LCD_intgerToString(time);
+		LCD_displayCharacter(' ');
 	}
 }

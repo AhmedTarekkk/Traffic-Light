@@ -22,4 +22,7 @@
 /* Check if a specific bit is cleared in any register and return true if yes */
 #define BIT_IS_CLEAR(REG,BIT) ( !(REG & (1<<BIT)) )
 
+/* Get specific bit value */
+#define GET_BIT(REG,BIT)	( ( REG >> BIT ) & 0x01 )
+
 #endif
